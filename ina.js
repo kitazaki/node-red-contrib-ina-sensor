@@ -47,4 +47,5 @@ module.exports = function(RED)
         	});
     	}
 	RED.nodes.registerType('ina226-sensor', inaSensor)
+	RED.nodes.registerType('ina260-sensor', inaSensor)
 }
