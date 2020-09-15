@@ -1,0 +1,84 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ina226-sensor', 
+		{
+			category: 'Sensor', 
+			color: '#D7A1D1',
+			defaults:
+			{
+				name: {value: ""},
+				address: {value: "0x40", required: true},
+				shunt: {value: "", required: true}
+			},
+			inputs: 1, 
+			outputs: 1, 
+			icon: 'arrow-in.png', 
+			label: function()
+			{
+				return this.name || "INA226"
+			},
+		});
+	RED.nodes.registerType('ina260-sensor',
+                {
+                        category: 'Sensor',
+                        color: '#D7A1D1',
+                        defaults:
+                        {
+                                name: {value: ""},
+                                address: {value: "0x40", required: true},
+                                shunt: {value: "0.002", required: true}
+                        },
+                        inputs: 1,
+                        outputs: 1,
+                        icon: 'arrow-in.png',
+                        label: function()
+                        {
+                                return this.name || "INA260"
+                        },
+                });
+</script>
+
+<script type="text/x-red" data-template-name="ina226-sensor">
+	<div class="form-row">
+		<label for="node-config-input-name"><i class="icon-tag"></i>Name</label>
+		<input type="text" id="node-input-name" placeholder="name">
+	</div>
+	<div class="form-row">
+		<label for="node-config-input-address">I2C Address</label>
+	        <input type="text" id="node-input-address" placeholder="address">
+	</div>
+	<div class="form-row">
+		<label for="node-config-input-shunt">Shunt Registor</label>
+	        <input type="text" id="node-input-shunt" placeholder="shunt">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="ina226-sensor">
+	<p>
+		output is voltage(V) <br>
+		output is current(A) <br>
+		output is power(W) <br>
+	</p>
+</script>
+
+<script type="text/x-red" data-template-name="ina260-sensor">
+        <div class="form-row">
+                <label for="node-config-input-name"><i class="icon-tag"></i>Name</label>
+                <input type="text" id="node-input-name" placeholder="name">
+        </div>
+        <div class="form-row">
+                <label for="node-config-input-address">I2C Address</label>
+                <input type="text" id="node-input-address" placeholder="address">
+        </div>
+        <div class="form-row">
+                <label for="node-config-input-shunt">Shunt Registor</label>
+                <input type="text" id="node-input-shunt" placeholder="shunt">
+        </div>
+</script>
+
+<script type="text/x-red" data-help-name="ina260-sensor">
+        <p>
+                output is voltage(V) <br>
+                output is current(A) <br>
+                output is power(W) <br>
+        </p>
+</script>
