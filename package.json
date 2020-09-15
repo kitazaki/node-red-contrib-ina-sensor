@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ina-sensor",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "a node-red node for the ina226 and ina260 sensor module",
   "main": "ina.js",
   "scripts": {},
